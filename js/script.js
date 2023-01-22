@@ -3,9 +3,12 @@ var canvas = document.getElementById("canvas");
     var points = [];
     var activePoint;
 
+    canvas.style.backgroundColor = "white";
+
     // Dibuja el plano cartesiano
     function drawAxes() {
       ctx.beginPath();
+      ctx.strokeStyle = "black";
       ctx.moveTo(canvas.width / 2, 0);
       ctx.lineTo(canvas.width / 2, canvas.height);
       ctx.moveTo(0, canvas.height / 2);
@@ -15,11 +18,11 @@ var canvas = document.getElementById("canvas");
 
     // Dibuja un punto en las coordenadas (x, y)
     function drawPoint(x, y, label) {
-      ctx.fillStyle = "white";
+      ctx.fillStyle = "blue";
       ctx.beginPath();
       ctx.arc(x + canvas.width/2, canvas.height/2 - y, 5, 0, 2 * Math.PI);
       ctx.fill();
-      ctx.fillStyle = "white";
+      ctx.font = "12px Arial";
       ctx.fillText(label, x + canvas.width/2 + 10, canvas.height/2 - y);
     }
 
