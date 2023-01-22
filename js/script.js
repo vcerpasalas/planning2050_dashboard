@@ -3,8 +3,6 @@ var canvas = document.getElementById("canvas");
     var points = [];
     var activePoint;
 
-    canvas.style.backgroundColor = "white";
-
     // Dibuja el plano cartesiano
     function drawAxes() {
       ctx.beginPath();
