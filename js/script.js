@@ -33,7 +33,7 @@ var canvas = document.getElementById("canvas");
       redraw();
     }
 
-canvas.style.backgroundColor = "white";
+canvas.style.backgroundColor = "";
 
     // Muestra las coordenadas del punto al hacer clic en él
     canvas.onmousedown = function (e) {
