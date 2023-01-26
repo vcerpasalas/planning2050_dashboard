@@ -1,23 +1,23 @@
-// Construyendo SweetAlert2 Progresivo con jQuery
+// Building SweetAlert2 Progressive with jQuery
 
 $("#btn7").click(function(){
     Swal.mixin({
-      input: 'text', //can be text, number, email, password, textarea, select, radio
+      input: 'text', // can be text, number, email, password, textarea, select, radio
       confirmButtonText: 'Siguiente &rarr;',
       showCancelButton: true,
       progressSteps: ['1', '2', '3']
     }).queue([
       {
-        title: 'Pregunta 1',
-        text: '¿Color favorito?' 
+        title: 'Question 1',
+        text: 'Describe your strategy in less than 100 words' // text box
       },
       {
-        title: 'Pregunta 2',
-        text: '¿Animal favorito?'
+        title: 'Question 2',
+        text: 'What is the expected metric for 2050?'
       },
         {
-        title: 'Pregunta 3',
-        text: '¿País de origen?'
+        title: 'Question 3',
+        text: 'What is your commitment year?'
       }      
     ]).then((result) => {
       if (result.value) {
