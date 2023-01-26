@@ -85,7 +85,7 @@ header .logo {
 
 header .logo span {
   text-transform: none;
-  color: #25274d;
+  color: #25274D;
 }
 
 header .navbar a {
@@ -233,7 +233,7 @@ header .follow a:hover {
 }
 
 .about .row-1 .content h3 {
-  color: #aaabb8;
+  color: #AAABB8;
   font-size: 3.5rem;
 }
 
@@ -371,7 +371,7 @@ header .follow a:hover {
 }
 
 .tool .box-container .box p {
-  color: #aaabb8;
+  color: #AAABB8;
   font-size: 1.7rem;
   padding-top: 0.5rem;
 }
