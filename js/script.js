@@ -199,7 +199,6 @@ var chart = new Chart(ctx, {
         label: "Expected Progress",
         data: listBars,
         backgroundColor: barcolors.slice(CYIndexLoc(Cyear)),
-<<<<<<< HEAD
         borderColor: "rgba(54, 162, 235, 1)",
         borderWidth: 1,
       },
@@ -212,22 +211,6 @@ var chart = new Chart(ctx, {
       },
     ],
   },
-=======
-        borderColor: "rgba(54, 162, 235, 1)",        
-        borderWidth: 1,        
-        
-      },
-      {
-        fill: true,
-        type: "line",  
-        label: "Progress Reported",
-        data: [0.00, 13, 30, 35, 25, 40],  
-        borderColor: "rgba(255, 239, 109, 0.5)",       
-                
-      }
-    ]
-  }
->>>>>>> main
 });
 
 /// Scatter plot section code ///
