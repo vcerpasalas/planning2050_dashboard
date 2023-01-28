@@ -4,6 +4,10 @@ var canvas = document.getElementById("scat");
     var ctx = canvas.getContext("2d");
     var points = [];
     var activePoint;
+    var goaltext;
+    var metric;
+    var metric_unit;
+    var year;
 
     // Drawing the Cartesian plane
     function drawAxes() {
@@ -35,7 +39,7 @@ var canvas = document.getElementById("scat");
       ctx.fillText(goaltext, x + canvas.width/2 + 10, canvas.height/2 - y);
     }
 
-canvas.style.backgroundColor = "";
+    canvas.style.backgroundColor = "";
 
     // Displaying the coordinates of the point when clicking on it
     canvas.onmousedown = function (e) {
@@ -48,9 +52,58 @@ canvas.style.backgroundColor = "";
         }
       }
       if (activePoint) {
-        alert("Coordenadas: (" + activePoint.x + ", " + activePoint.y + ")\nEtiqueta: " + activePoint.goaltext);
-      }
+
+      // Plotting Sweetalert2
+        // First Window
+        Swal.fire({
+          title: 'Describe your strategy in less than 50 words',
+          input: 'text',
+          inputPlaceholder: 'Describe your strategy',
+          showCancelButton: true,
+          confirmButtonText: 'Next →',
+          allowOutsideClick: false,
+          inputAttributes: {
+          maxlength: '50'
+          }
+          }).then((result) => {
+          if (result.value) {
+          // Guardar la respuesta de la primera ventana en una variable
+          var strategy = result.value;
+
+
+        Swal.fire({
+        title: 'What is the expected metric for 2050?',
+            input: 'text',
+            inputPlaceholder: 'Escribe el valor',
+            inputAttributes: {
+              type: 'number',
+              step: 'any'
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Siguiente',
+            preConfirm: (result) => {
+              activePoint.metric = result;
+              return sweetalert2.fire({
+                title: 'What is your commitment year?',
+                input: 'text',
+                inputPlaceholder: 'Escribe el año',
+                inputAttributes: {
+                  type: 'number',
+                  step: 'any'
+                },
+                showCancelButton: true,
+                confirmButtonText: 'Next →',
+                preConfirm: (result) => {
+                  activePoint.year = result;
+                  return activePoint;
+                }
+              });
+            }
+          });
+        }
+      });
     }
+  }
 
     // Redrawing the Canvas
     function redraw() {
@@ -60,13 +113,15 @@ canvas.style.backgroundColor = "";
         drawPoint(points[i].x, points[i].y, points[i].goaltext);
       }
     }
-
     drawAxes();
+
+
+
     // Aumentar una etiqueta, titulo, descripcion. Coordenada.
     // Ver la forma de guardar/almacenar la data en Backend - Firebase
     // ver la posibilidad de editar los nombres, luego de plot 
 
     // Una vez que se agregue punto, darle save. Deberia aparecer un botón de "Ver Progreso" y envie al gráfico de barras. Es ideal que aparezca en la página (probar)
-    // el gráfico de barras aparece como una nueva página (probar)
+  
 
 

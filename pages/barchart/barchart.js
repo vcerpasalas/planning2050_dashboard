@@ -1,4 +1,4 @@
-// Variables and code for the Bar Chart
+// Variables and code for plotting the Bar Chart
 
 var years;
 years = [2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050];
@@ -39,11 +39,11 @@ var Cyear;
 Cyear = prompt("Enter Commitment Year: ");
 
 while (Cyear >= years[8]){
-    console.log("year outside of range, enter year between 2022 and 2029. Assuming 2029");
+    console.log("Year outside of range, enter year between 2022 and 2029. Assuming 2029");
     Cyear--;
 }
 while (Cyear < years[0]){
-    console.log("year outside of range, enter year between 2022 and 2029. Assuming 2022");
+    console.log("Year outside of range, enter year between 2022 and 2029. Assuming 2022");
     Cyear++;
 }
 

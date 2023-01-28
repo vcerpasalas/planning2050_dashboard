@@ -9,11 +9,11 @@ $("#btn7").click(function(){
     }).queue([
       {
         title: 'Question 1',
-        text: 'Describe your strategy in less than 100 words' // text box
+        text: 'Describe your strategy in less than 20 words' // text box with word limit
       },
       {
         title: 'Question 2',
-        text: 'What is the expected metric for 2050?'
+        text: 'What is the expected metric for 2050?' // menu
       },
         {
         title: 'Question 3',
@@ -22,7 +22,7 @@ $("#btn7").click(function(){
     ]).then((result) => {
       if (result.value) {
         Swal.fire({
-          title: '¡Completado!',
+          title: '¡Thank you!',
           html:
             'Tus respuestas: <pre><code>' +
               JSON.stringify(result.value) +
