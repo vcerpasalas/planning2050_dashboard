@@ -51,57 +51,10 @@ var canvas = document.getElementById("scat");
           break;
         }
       }
-      if (activePoint) {
-
-      // Plotting Sweetalert2
-        // First Window
-        Swal.fire({
-          title: 'Describe your strategy in less than 50 words',
-          input: 'text',
-          inputPlaceholder: 'Describe your strategy',
-          showCancelButton: true,
-          confirmButtonText: 'Next →',
-          allowOutsideClick: false,
-          inputAttributes: {
-          maxlength: '50'
-          }
-          }).then((result) => {
-          if (result.value) {
-          // Guardar la respuesta de la primera ventana en una variable
-          var strategy = result.value;
-
-
-        Swal.fire({
-        title: 'What is the expected metric for 2050?',
-            input: 'text',
-            inputPlaceholder: 'Escribe el valor',
-            inputAttributes: {
-              type: 'number',
-              step: 'any'
-            },
-            showCancelButton: true,
-            confirmButtonText: 'Siguiente',
-            preConfirm: (result) => {
-              activePoint.metric = result;
-              return sweetalert2.fire({
-                title: 'What is your commitment year?',
-                input: 'text',
-                inputPlaceholder: 'Escribe el año',
-                inputAttributes: {
-                  type: 'number',
-                  step: 'any'
-                },
-                showCancelButton: true,
-                confirmButtonText: 'Next →',
-                preConfirm: (result) => {
-                  activePoint.year = result;
-                  return activePoint;
-                }
-              });
-            }
-          });
-        }
-      });
+      // Show the Modal form
+      if (activePoint) {  
+              $("#pointInfo").text(activePoint.goaltext);
+              $("#pointModal").modal("show");
     }
   }
 
