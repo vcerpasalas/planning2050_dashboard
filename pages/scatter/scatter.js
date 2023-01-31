@@ -16,7 +16,9 @@ var canvas = document.getElementById("scat");
       ctx.moveTo(canvas.width / 2, 0);
       ctx.lineTo(canvas.width / 2, canvas.height);
       ctx.moveTo(0, canvas.height / 2);
-      ctx.lineTo(canvas.width, canvas.height / 2);
+      ctx.lineTo(canvas.width, canvas.height / 2);      
+      ctx.fillText("Positive-negative impact", canvas.width - 50, canvas.height / 2 + 20);
+      ctx.fillText("More-less common", canvas.width / 2 - 20, 50);
       ctx.stroke();
     }
 
@@ -70,11 +72,10 @@ var canvas = document.getElementById("scat");
 
 
 
-    // Aumentar una etiqueta, titulo, descripcion. Coordenada.
+    // Aumentar una etiqueta, Coordenada.
     // Ver la forma de guardar/almacenar la data en Backend - Firebase
     // ver la posibilidad de editar los nombres, luego de plot 
-
-    // Una vez que se agregue punto, darle save. Deberia aparecer un botón de "Ver Progreso" y envie al gráfico de barras. Es ideal que aparezca en la página (probar)
+    // Una vez que se agregue punto, darle save. Deberia aparecer un botón de "Show Progreso" y envie al gráfico de barras. Es ideal que aparezca en la página (probar)
   
 
 
