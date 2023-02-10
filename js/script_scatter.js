@@ -38,70 +38,54 @@ document.querySelectorAll("a").forEach((links) => {
 
 // Scatter plot in Canvas
 var canvas = document.getElementById("scatter");
-    var ctx = canvas.getContext("2d");
-    var points = [];
-    var activePoint;
-    var goaltext;
-    var metric;
-    var metric_unit;
-    var year;
+var ctx = canvas.getContext("2d");
+var points = [];
 
-    // Draw the Cartesian plane
-    function drawAxes() {
-      ctx.beginPath();
-      ctx.strokeStyle = "rgb(44, 118, 135)";
-      ctx.moveTo(canvas.width / 2, 0);
-      ctx.lineTo(canvas.width / 2, canvas.height);
-      ctx.moveTo(0, canvas.height / 2);
-      ctx.lineTo(canvas.width, canvas.height / 2);      
-      ctx.stroke();
-      ctx.fillStyle= "rgb(44, 118, 135)";
-      ctx.fillText("Negative impact                                                                                                                           Positive Impact", 10, canvas.height/2 +10)
-      ctx.rotate(Math.PI /-2)
-      ctx.fillText("Less Common                                                                                                                             More Common", -canvas.width/2 *2 + 10, canvas.width/2 - 5)
-    }
+// Draw the Cartesian plane
+function drawAxes() {
+  ctx.beginPath();
+  ctx.strokeStyle = "rgb(44, 118, 135)";
+  ctx.moveTo(canvas.width / 2, 0);
+  ctx.lineTo(canvas.width / 2, canvas.height);
+  ctx.moveTo(0, canvas.height / 2);
+  ctx.lineTo(canvas.width, canvas.height / 2);      
+  ctx.stroke();
+  ctx.fillStyle= "rgb(44, 118, 135)";
+  ctx.fillText("Negative impact                                                                                                                           Positive Impact", 10, canvas.height/2 +10)
+  ctx.rotate(Math.PI /-2)
+  ctx.fillText("Less Common                                                                                                                             More Common", -canvas.width/2 *2 + 10, canvas.width/2 - 5)
+}
 
-    // Add a point when clicking on the Canvas
-    canvas.onclick = function (e) {
-      var x = e.pageX - canvas.offsetLeft - canvas.width / 2;
-      var y = canvas.height / 2 - (e.pageY - canvas.offsetTop);
-      var goaltext = prompt("What is your strategy?:");
-      points.push({x: x, y: y, goaltext: goaltext});
-      redraw();
-    }
+// Add a point when clicking on the Canvas
+canvas.onclick = function (e) {
+  var x = e.pageX - canvas.offsetLeft - canvas.width / 2;
+  var y = canvas.height / 2 - (e.pageY - canvas.offsetTop);
+  var goaltext = prompt("What is your strategy?:");
+  points.push({x: x, y: y, goaltext: goaltext});
+  redraw();
+}
 
-    // Draw a point at the coordinates (x, y)
-    function drawPoint(x, y, goaltext) {      
-      ctx.fillStyle = "rgb(44, 118, 135)";
-      ctx.beginPath();
-      ctx.arc(x + canvas.width/2, canvas.height/2 - y, 5, 0, 2 * Math.PI);
-      ctx.fill();
-      ctx.font = "10px Roboto";
-      ctx.fillText(goaltext, x + canvas.width/2 + 10, canvas.height/2 - y);
-    }
-    canvas.style.backgroundColor = "";
+// Draw a point at the coordinates (x, y)
+function drawPoint(x, y, goaltext) {      
+  ctx.fillStyle = "rgb(44, 118, 135)";
+  ctx.beginPath();
+  ctx.arc(x + canvas.width/2, canvas.height/2 - y, 5, 0, 2 * Math.PI);
+  ctx.fill();
+  ctx.font = "10px Roboto";
+  ctx.fillText(goaltext, x + canvas.width/2 + 10, canvas.height/2 - y);
+}
+canvas.style.backgroundColor = "";
 
-    // Display the coordinates of the point when clicking on it
-    canvas.onmousedown = function (e) {
-      var x = e.pageX - canvas.offsetLeft - canvas.width / 2;
-      var y = canvas.height / 2 - (e.pageY - canvas.offsetTop);
-      for (var i = 0; i < points.length; i++) {
-        if (Math.abs(points[i].x - x) < 5 && Math.abs(points[i].y - y) < 5) {
-          activePoint = points[i];
-          break;
-        }
-      }
-    }
+// Redraw the Canvas
+function redraw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawAxes();
+  for (var i = 0; i < points.length; i++) {
+    drawPoint(points[i].x, points[i].y, points[i].goaltext);
+  }
+}
+redraw();
 
-    // Redraw the Canvas
-    function redraw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      drawAxes();
-      for (var i = 0; i < points.length; i++) {
-        drawPoint(points[i].x, points[i].y, points[i].goaltext);
-      }
-    }
-    redraw();
 
 
 
