@@ -625,6 +625,10 @@ section {
 
 
 /* Scatter section starts */
+#canvas {
+  border: 1px solid rgb(255, 255, 255);
+}
+
 .scatter {
   border: 3px solid rgb(44, 118, 135);
 }
