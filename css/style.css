@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
 :root {
-  --main-color: #2e9cca;
+  --main-color: #2E9CCA;
 }
 
 * {
@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  background: #25274d;
+  background: #25274D;
   padding-left: 30rem;
 }
 
@@ -33,6 +33,7 @@ section {
   min-height: 100vh;
 }
 
+/* Header section starts */
 .heading {
   font-size: 4rem;
   padding-bottom: 1rem;
@@ -50,7 +51,7 @@ section {
   margin-top: 1rem;
   padding: 0.8rem 3rem;
   background: var(--main-color);
-  color: #25274d;
+  color: #25274D;
   cursor: pointer;
   font-size: 1.7rem;
 }
@@ -60,12 +61,12 @@ section {
   letter-spacing: 0.2rem;
 }
 
-header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  background: #29648a;
+  background: #29648A;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,37 +77,38 @@ header {
   text-align: center;
 }
 
-header .logo {
+.header .logo {
   text-transform: none;
   color: #fff;
   font-size: 3rem;
   font-weight: bolder;
 }
 
-header .logo span {
+.header .logo span {
   text-transform: none;
   color: #25274D;
 }
 
-header .navbar a {
+.header .navbar a {
   display: block;
   font-size: 2rem;
   color: #fff;
   margin: 2rem 0;
 }
 
-header .navbar a:hover {
+.header .navbar a:hover {
   letter-spacing: 0.2rem;
-  color: #25274d;
+  color: #25274D;
+  font-weight: bolder;
 }
 
-header .follow a {
+.header .follow a {
   font-size: 2.5rem;
   color: #fff;
   margin: 0 0.7rem;
 }
 
-header .follow a:hover {
+.header .follow a:hover {
   color: var(--main-color);
 }
 
@@ -123,7 +125,10 @@ header .follow a:hover {
   cursor: pointer;
   display: none;
 }
+/* Header section ends */
 
+
+/* Cursor section starts */
 .cursor-1 {
   position: absolute;
   top: 0;
@@ -160,7 +165,10 @@ header .follow a:hover {
 .cursor-2.active {
   display: none;
 }
+/* Cursor section ends */
 
+
+/* Home section starts */
 .home {
   display: flex;
   align-items: center;
@@ -204,10 +212,13 @@ header .follow a:hover {
 
 .home .content .text {
   font-size: 1.7rem;
-  color: #aaabb8;
+  color: #AAABB8;
   padding: 0.5rem 0;
 }
+/* Home section ends */
 
+
+/* About section starts */
 .about .row-1 {
   display: flex;
   flex-wrap: wrap;
@@ -238,7 +249,7 @@ header .follow a:hover {
 }
 
 .about .row-1 .content p {
-  color: #aaabb8;
+  color: #AAABB8;
   font-size: 1.7rem;
   padding: 0.5rem 0;
 }
@@ -334,11 +345,14 @@ header .follow a:hover {
 }
 
 .about .row-2 .box-container .box p {
-  color: #aaabb8;
+  color: #AAABB8;
   font-size: 1.7rem;
   padding-top: 0.5rem;
 }
+/* About section ends */
 
+
+/* Our tool section starts */
 .tool .box-container {
   display: flex;
   flex-wrap: wrap;
@@ -375,15 +389,10 @@ header .follow a:hover {
   font-size: 1.7rem;
   padding-top: 0.5rem;
 }
+/* Our tool section ends */
 
-#canvas {
-  border: 1px solid rgb(255, 255, 255);
-}
 
-#scat {
-  border: 1px solid rgb(44, 118, 135);
-}
-
+/* Cities section starts */
 .CNC .box-container {
   display: flex;
   flex-wrap: wrap;
@@ -427,14 +436,17 @@ header .follow a:hover {
 .CNC .box-container .box .content h3 {
   font-size: 2.5rem;
   padding: 0.5rem 0;
-  color: #25274d;
+  color: #25274D;
 }
 
 .CNC .box-container .box .content p {
   font-size: 1.5rem;
-  color: #aaabb8;
+  color: #AAABB8;
 }
+/* Cities section ends */
 
+
+/* Partners section starts */
 .network .box-container {
   display: flex;
   flex-wrap: wrap;
@@ -498,7 +510,10 @@ header .follow a:hover {
   background: var(--main-color);
   color: #fff;
 }
+/* Partners section ends */
 
+
+/* Contact section starts */
 .contact .icons-container {
   display: flex;
   gap: 1.5rem;
@@ -533,7 +548,7 @@ header .follow a:hover {
 }
 
 .contact .icons-container .icons p {
-  color: #aaabb8;
+  color: #AAABB8;
   font-size: 1.7rem;
 }
 
@@ -589,22 +604,33 @@ header .follow a:hover {
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
+/* Contact section ends */
 
+
+/* Footer section starts */
 .footer {
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 1rem;
   padding: 2.5rem;
   text-align: center;
-  color: #aaabb8;
-  background: #25274d;
+  color: #AAABB8;
+  background: #25274D;
 }
 
 .footer span {
   color: var(--main-color);
 }
+/* Footer section ends */
 
-/*  Media queries  */
 
+/* Scatter section starts */
+.scatter {
+  border: 3px solid rgb(44, 118, 135);
+}
+/* Scatter section ends */
+
+
+/* Media queries */
 @media (max-width: 991px) {
   html {
     font-size: 55%;
@@ -618,11 +644,11 @@ header .follow a:hover {
     display: initial;
   }
 
-  header {
+  .header {
     left: -120%;
   }
 
-  header.active {
+  .header.active {
     left: 0%;
   }
 
@@ -637,7 +663,7 @@ header .follow a:hover {
     font-size: 50%;
   }
 
-  header {
+  .header {
     width: 100%;
   }
 
