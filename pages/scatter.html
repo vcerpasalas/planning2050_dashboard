@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLANNING2050 Dashboard</title>
+
+    <!-- Font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- Custom CSS file link  -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+
+<!--Text on top of graph-->
+  <section class="home" id="about">
+    <div class="content">
+      
+      <h3><span> PLANNING</span>2050 </h3>
+      <p class="info">
+        Mapping your Strategy | Instructions
+      </p>
+
+  <div class="scatterParag">
+    <p>Welcome. If this is the first time you are "mapping" your strategy, please click on the canvas where you think your strategy or action in your 2050Commitment is located today. When clicking, you will be drawing a dot and be prompted a few questions.</p>
+    <p>There is no right or wrong answer here. Your picked location should be based on your current interpretation of how much IMPACT ("X" axis), and how COMMON ("Y" axis) is your solution / action. </p>
+    <p>When mapping this, think about your city or community, compared to what you consider peer cities / communities</p>
+  </div>
+
+  
+  <section class="about" id="about">
+    <div class="row-1">
+        <div class="content">
+        <div class="box">
+          <p>1. Click on the canvas up to 3 times. You can add more strategies later (if needed)</p>
+          <p>2. Name your Strategy when prompted</p>
+          <p>3. Click on each Strategy Button (under canvas) to enter details</p>           
+        </div>
+      </div>
+
+      <!-- Plotting the Canvas for the Scatterplot  -->
+      <div class="content">
+         <canvas class="scatter" id="scatter" width="500" height="500"></canvas>
+      </div>
+
+      
+     <!-- Placeholder button text  -->
+      <div class = "content">
+        <a href="#about" class="btn" id="st1"> Strategy 1 </a>
+        <a href="#about" class="btn" id="st2"> Strategy 2 </a>
+        <a href="#about" class="btn" id="st3"> Strategy 3 </a>
+      </div>
+
+
+    </body>
+  </section>
+
+
+    <!-- Cursors  -->
+    <div class="cursor-1"></div>
+    <div class="cursor-2"></div>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+    <!-- Header section starts  -->
+    <header class="header">
+      <a href="../index.html#" class="logo"> <span>PLANNING</span> 2050 </a>
+
+      <nav class="navbar">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About us</a>
+        <a href="../index.html#tool">Our tool</a>
+        <a href="../index.html#CNC">Cities & Communities</a>
+        <a href="../index.html#network">Network</a>
+        <a href="../index.html#contact">Contact us</a>
+      </nav>
+
+      <div class="follow">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+      </div>
+    </header>
+    <!-- Header section ends -->
+
+    <!-- Footer section starts -->
+    <footer class="footer">
+      Created by <span> PLANNING2050 web development team </span> | All rights
+      reserved
+    </footer>
+    <!-- Footer section ends -->
+
+    <!-- Custom js file link  -->
+    <script src="../js/script_scatter.js"></script>
+  </body>
+</html>
