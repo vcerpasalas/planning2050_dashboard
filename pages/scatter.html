@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLANNING2050 Dashboard</title>
+
+    <!-- Font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- Custom CSS file link  -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+
+<!--Text section and instructions for canvas (drawing dots)-->
+  <section class="home" id="about">
+    <div class="content">
+      
+      <h3><span> PLANNING</span>2050 </h3>
+      <p class="info">
+        Dashboard | Mapping your Strategy
+      </p>
+
+  <div class="scatterParag">
+    <p>Welcome. If this is the first time you are "mapping" your strategy, please click on the canvas where you think your strategy or action in your 2050Commitment is located today. When clicking, you will be drawing a dot and be prompted a few questions.</p>
+    <p>There is no right or wrong answer here. Your picked location should be based on your current interpretation of how much IMPACT ("X" axis), and how COMMON ("Y" axis) is your solution / action. </p>
+    <p>When mapping this, think about your city or community, compared to what you consider peer cities / communities</p>
+  </div>
+
+  
+  <section class="about" id="about">
+    <div class="row-1">
+        <div class="content">
+        <div class="box">
+          <p>1. Click on the canvas as many times as you want. Recommended: 3 dots at a time. You can add more strategies later (if needed)</p>
+          <p>2. Name your Strategy when prompted</p>
+          <p>3. Click on "Manage My Strategies" button to add details for each dot</p>           
+        </div>
+        <a href="#toolx" class="btn" id="MyStrategies"> Manage My Strategies </a>
+      </div>
+
+      <!-- Plotting the Canvas for the Scatterplot  -->
+      <div class="content">
+         <canvas class="scatter" id="scatter" width="500" height="500"></canvas>
+      </div>
+    </body>
+  </section>
+
+  <!-- Manage My Strategies Section  -->
+  <section class="tool" id="toolx">
+    <h1 class="heading"><span> Manage </span> My Strategies</h1>
+        <div class="box-container">
+        <div class="box">
+          <i class="fas fa-bullseye"></i>
+          <h3 >Strategy:</h3>
+          <h3 id="st1">"undefined"</h3>
+          <p>Click "Manage" to enter details and save prompted answers.
+          Once details are entered you can report progress </p>
+          <a href="../pages/userprofile.html" class="btn">Manage</a>
+        </div>
+        <div class="box">
+          <i class="fas fa-bullseye"></i>
+          <h3 >Strategy:</h3>
+          <h3 id="st2">"undefined"</h3>
+          <p>Click "Manage" to enter details and save prompted answers.
+            Once details are entered you can report progress </p>
+          <a href="../pages/userprofile.html" class="btn">Manage</a>
+        </div>
+        <div class="box">
+          <i class="fas fa-bullseye"></i>
+          <h3 >Strategy:</h3>
+          <h3 id="st3">"undefined"</h3>
+          <p>Click "Manage" to enter details and save prompted answers.
+            Once details are entered you can report progress </p>
+          <a href="../pages/userprofile.html" class="btn">Manage</a>
+        </div>
+        <div class="box">
+          <i class="fas fa-bullseye"></i>
+          <h3 id="moreStrategies">Add more strategies</h3>
+          <p>
+            Click here if you want to add more "dots" (strategies/actions) to your 2050 Commitment
+          </p>
+          <a href="../pages/scatter.html" class="btn">Add More Dots</a>
+        </div>
+      </div>
+  </section>
+
+
+
+
+
+
+    <!-- Cursors  -->
+    <div class="cursor-1"></div>
+    <div class="cursor-2"></div>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+    <!-- Header section starts  -->
+    <header class="header">
+      <a href="../index.html#" class="logo"> <span>PLANNING</span> 2050 </a>
+
+      <nav class="navbar">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About us</a>
+        <a href="../index.html#tool">Our tool</a>
+        <a href="../index.html#CNC">Cities & Communities</a>
+        <a href="../index.html#network">Network</a>
+        <a href="../index.html#contact">Contact us</a>
+      </nav>
+
+      <div class="follow">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+      </div>
+    </header>
+    <!-- Header section ends -->
+
+    <!-- Footer section starts -->
+    <footer class="footer">
+      Created by <span> PLANNING2050 web development team </span> | All rights
+      reserved
+    </footer>
+    <!-- Footer section ends -->
+
+    <!-- Custom js file link  -->
+    <script src="../js/script_scatter.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+  </body>
+</html>
