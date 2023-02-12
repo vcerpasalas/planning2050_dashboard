@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLANNING2050 Dashboard</title>
+
+    <!-- Font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- Custom CSS file link  -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+
+<!--Text section and instructions for canvas (drawing dots)-->
+  <section class="home" id="about">
+    <div class="content">
+      
+      <h3><span> PLANNING</span>2050 </h3>
+      <p class="info">
+        Dashboard | Mapping your Strategy
+      </p>
+
+  <div class="scatterParag">
+    <p>Please click on the canvas where you think your strategy or action in your 2050Commitment is located today</p>
+    <p>There is no right or wrong answer here. Your picked location should be based on your current interpretation of how much IMPACT ("X" axis), and how COMMON ("Y" axis) is your solution / action / strategy today. </p>
+    <p>When mapping this, think about your city or community, compared to what you consider peer cities / communities</p>
+  </div>
+
+  
+  <section class="about" id="about">
+   
+
+        <section class="tool" id="saveX">
+          <div class="box-container">
+          <!-- Plotting the Canvas for the Scatterplot  -->
+          <div class="content">
+            <canvas class="scatter" id="scatter" width="500" height="500"></canvas>
+          </div> 
+          
+          <div class="box-container">
+              <div class="box">
+                <i class="fas fa-list-ol"></i>
+                <h3 >Click on the "canvas" |  Count:</h3>
+                <h3 id="st1">0</h3>
+                <p>Click "Save" to store your inputs</p>
+                <a onclick = "downloadCSV()" href="#" class="btn" id="toDatabase" >Save</a>
+                <p>After saving, Click "Manage" </p>
+                <p>to add details and edit your inputs</p>
+                <div><a href="../pages/userprofile.html" class="btn">Manage</a></div>
+                <p>Ready to report progress? </p>
+                <p>Click below for next steps</p>
+                <div><a href="#toolx" class="btn">More</a></div>
+              </div>
+             
+            </div>
+        </section>
+
+    </body>
+  </section>
+
+  <!-- Manage My Strategies Section  -->
+  <section class="tool" id="toolx">
+    <h1 class="heading"><span> Manage Strategies </span> |  Report Progress</h1>
+        <div class="box-container">
+          <div class="box">
+            <i class="fas fa-bullseye"></i>
+            <p>Almost Ready, I want to edit my inputs </p>
+            <a href="../pages/userprofile.html" class="btn">MANAGE ALL MY STRATEGIES</a>
+          </div>
+
+        <div class="box">
+          <i class="fas fa-signal"></i>
+          <p>I am ready to repor progress </p>
+          <a href="../pages/barchart.html" class="btn">ACCESS MY REPORTING DASHBOARD</a>
+        </div>
+      </div>
+  </section>
+
+
+
+
+
+
+    <!-- Cursors  -->
+    <div class="cursor-1"></div>
+    <div class="cursor-2"></div>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+    <!-- Header section starts  -->
+    <header class="header">
+      <a href="../index.html#" class="logo"> <span>PLANNING</span> 2050 </a>
+
+      <nav class="navbar">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About us</a>
+        <a href="../index.html#tool">Our tool</a>
+        <a href="../index.html#CNC">Cities & Communities</a>
+        <a href="../index.html#network">Network</a>
+        <a href="../index.html#contact">Contact us</a>
+      </nav>
+
+      <div class="follow">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+      </div>
+    </header>
+    <!-- Header section ends -->
+
+    <!-- Footer section starts -->
+    <footer class="footer">
+      Created by <span> PLANNING2050 web development team </span> | All rights
+      reserved
+    </footer>
+    <!-- Footer section ends -->
+
+    <!-- Custom js file link  -->
+    <script src="../js/script_scatter.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+  </body>
+</html>
