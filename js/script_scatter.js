@@ -43,7 +43,6 @@ var points = [];
 var activePoint;
 var dataGoaltext;
 
-
 // Draw the Cartesian plane
 function drawAxes() {
   ctx.beginPath();
@@ -54,16 +53,15 @@ function drawAxes() {
   ctx.lineTo(canvas.width, canvas.height / 2);      
   ctx.stroke();
   ctx.fillStyle= "rgb(146, 209, 223)";
-  ctx.fillText("Negative impact" , 10, canvas.height/2 +12)
+  ctx.fillText("Negative impact" , 10, canvas.height/2 + 12)
   ctx.rotate(Math.PI /-2)
   ctx.fillText("Less Common", -canvas.width + 10, canvas.width/2 - 8)
   ctx.rotate(Math.PI /2)
-  ctx.fillText("Positive impact" , canvas.width - 75, canvas.height/2 -8)
+  ctx.fillText("Positive impact" , canvas.width - 75, canvas.height/2 - 8)
   ctx.rotate(Math.PI /-2)
   ctx.fillText("More Common", -canvas.width +canvas.width -75, canvas.width/2 + 12)
   ctx.rotate(Math.PI /2)
 }
-
 
 // Add a point when clicking on the Canvas
 var goaltext;
@@ -73,6 +71,7 @@ canvas.onclick = async function (e) {
     title: 'Please choose a name for your strategy',
     text: 'Example: "Access to transit". Try limit this to 3-10 words maximum',
     input: 'text',
+
     showCancelButton: true,
     inputValidator: (value) => {
       if (!value) {
@@ -118,9 +117,6 @@ function redraw() {
   }
 }
 
-
-
-
     // Displaying the coordinates of the point when clicking on it
     canvas.onmousedown = function (e) {
       var x = e.pageX - canvas.offsetLeft - canvas.width / 2;
@@ -143,7 +139,6 @@ function redraw() {
   }
 
 redraw();
-
 
 
 

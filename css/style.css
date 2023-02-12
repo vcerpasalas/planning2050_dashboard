@@ -647,6 +647,10 @@ section {
   font-size: 1.3rem;
   padding: 0.5rem 0;
 }
+
+.swal2-popup {
+  font-size: 1.4rem !important;
+}
 /* Scatter section ends */
 
 
