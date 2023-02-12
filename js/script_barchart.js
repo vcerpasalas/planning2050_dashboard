@@ -71,7 +71,9 @@ barcolors = [
     "rgba(203, 67, 56)" 
 ]
 
+// Form asking Commitment year
 var Cyear;
+
 Cyear = prompt("Enter Commitment Year: ");
   while (Cyear >= years[8]){   // Year outside of range, enter year between 2022 and 2029
     Cyear--;
@@ -97,6 +99,16 @@ var yearlist = years.slice(CYIndexLoc(Cyear));
         listBars.push(value);
         i++;
   }
+
+
+// Strategy Buttons
+const strategyButtons = document.querySelectorAll(".strategy-button");
+
+  strategyButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      console.log(`${button.textContent} was clicked!`);
+    });
+  });
 
 
 // Drawing Chart.js v2.9.3 - Bar chart
