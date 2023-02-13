@@ -104,7 +104,6 @@ var chart = new Chart(ctx, {
 
 // Strategy Buttons
 const strategyButtons = document.querySelectorAll(".strategy-button");
-
   strategyButtons.forEach(button => {
     button.addEventListener("click", function() {
       console.log(`${button.textContent} was clicked!`);
