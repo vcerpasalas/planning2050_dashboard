@@ -43,6 +43,7 @@ var points = [];
 var activePoint;
 var dataGoaltext;
 
+
 // Draw the Cartesian plane
 function drawAxes() {
   ctx.beginPath();
@@ -53,15 +54,16 @@ function drawAxes() {
   ctx.lineTo(canvas.width, canvas.height / 2);      
   ctx.stroke();
   ctx.fillStyle= "rgb(146, 209, 223)";
-  ctx.fillText("Negative impact" , 10, canvas.height/2 + 12)
+  ctx.fillText("Negative impact" , 10, canvas.height/2 +12)
   ctx.rotate(Math.PI /-2)
   ctx.fillText("Less Common", -canvas.width + 10, canvas.width/2 - 8)
   ctx.rotate(Math.PI /2)
-  ctx.fillText("Positive impact" , canvas.width - 75, canvas.height/2 - 8)
+  ctx.fillText("Positive impact" , canvas.width - 75, canvas.height/2 -8)
   ctx.rotate(Math.PI /-2)
   ctx.fillText("More Common", -canvas.width +canvas.width -75, canvas.width/2 + 12)
   ctx.rotate(Math.PI /2)
 }
+
 
 // Add a point when clicking on the Canvas
 var goaltext;
@@ -71,7 +73,6 @@ canvas.onclick = async function (e) {
     title: 'Please choose a name for your strategy',
     text: 'Example: "Access to transit". Try limit this to 3-10 words maximum',
     input: 'text',
-
     showCancelButton: true,
     inputValidator: (value) => {
       if (!value) {
@@ -87,16 +88,10 @@ canvas.onclick = async function (e) {
     redraw();
 
     count++;
-    if (count == 1) {
+    if (count <= 10) {
       const element = document.getElementById("st1");
-      element.innerHTML = goaltext;
-    } else if (count == 2) {
-      const element = document.getElementById("st2");
-      element.innerHTML = goaltext;
-    } else if (count == 3) {
-      const element = document.getElementById("st3");
-      element.innerHTML = goaltext;
-    }
+      element.innerHTML = count;
+    } 
   }
 };
 
@@ -116,6 +111,9 @@ function redraw() {
     drawPoint(points[i].x, points[i].y, points[i].goaltext);
   }
 }
+
+
+
 
     // Displaying the coordinates of the point when clicking on it
     canvas.onmousedown = function (e) {
@@ -141,11 +139,62 @@ function redraw() {
 redraw();
 
 
+/// Function to download the CSV file
+function downloadCSV(csv) {
+  var dataGoaltext = [];
+  for (var i = 0; i < points.length; i++) {
+    dataGoaltext.push({
+      goaltext: points[i].goaltext,
+      x: points[i].x,
+      y: points[i].y
+    });
+  }
 
+  var filename = "ScatterPlot.csv";
 
+  var link = document.createElement("a");
+  if (link.download !== undefined) {
+    var existingData = "";
+    try {
+      // Load the existing data from the file
+      existingData = atob(link.getAttribute("href").split(",")[1]);
+    } catch (error) {
+      console.log("No existing data found");
+    }
+    // Append the new data to the existing data
+    var csv = convertArrayOfObjectsToCSV(dataGoaltext, existingData);
 
-    // Aumentar una etiqueta, Coordenada.
-    // Ver la forma de guardar/almacenar la data en Backend - Firebase
-    // ver la posibilidad de editar los nombres, luego de plot 
-    // Una vez que se agregue punto, darle save. Deberia aparecer un botón de "Show Progreso" y envie al gráfico de barras. Es ideal que aparezca en la página (probar)
-  
+    link.setAttribute("href", "data:text/csv;charset=utf-8," + encodeURI(csv));
+    link.setAttribute("download", filename);
+    link.style.visibility = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+}
+
+// Function to convert array of objects to CSV
+function convertArrayOfObjectsToCSV(data, existingData) {
+  var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+
+  columnDelimiter = ",";
+  lineDelimiter = "\n";
+
+  keys = Object.keys(data[0]);
+
+  result = existingData;
+  result += keys.join(columnDelimiter);
+  result += lineDelimiter;
+
+  data.forEach(function(item) {
+    ctr = 0;
+    keys.forEach(function(key) {
+      if (ctr > 0) result += columnDelimiter;
+      result += item[key];
+      ctr++;
+    });
+    result += lineDelimiter;
+  });
+
+  return result;
+}
