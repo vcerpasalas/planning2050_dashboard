@@ -77,12 +77,11 @@ while (i <= 2050 - Cyear) {
 
 // Strategy Buttons
 const strategyButtons = document.querySelectorAll(".strategy-button");
-
-strategyButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    console.log(`${button.textContent} was clicked!`);
-  });
-});
+strategyButtons.forEach((button) =>
+  button.addEventListener("click", () =>
+    console.log(`${button.textContent} was clicked!`)
+  )
+);
 
 // Drawing Chart.js v2.9.3 - Bar chart
 var ctx = document.getElementById("myChart");
