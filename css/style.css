@@ -649,7 +649,44 @@ section {
   padding: 0.5rem 0;
   margin-left: 8rem;
 }
+
+.swal2-popup {
+  font-size: 1.4rem !important;
+}
 /* Scatter section ends */
+
+
+/* Barchart section starts */
+.strategy-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.strategy-button {
+  background-color: #2E9CCA;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 20px 10px;
+  margin-left: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.strategy-button:hover {
+  background-color: #fff;
+  color: #333
+}
+/* Barchart section ends */
 
 
 /* Media queries */

@@ -1,7 +1,7 @@
 
 // Landing page
 
-// Cursor dinámico
+// Dynamic Cursor
 let menu = document.querySelector("#menu-bars");
 let header = document.querySelector("header");
 

@@ -1,5 +1,5 @@
 
-// Cursor dinámico
+// Dynamic Cursor
 let menu = document.querySelector("#menu-bars");
 let header = document.querySelector("header");
 
@@ -37,39 +37,11 @@ document.querySelectorAll("a").forEach((links) => {
 
 
 // Data for Bar chart 
-var years;
-years = [2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050];
-barcolors = [
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",         
-    "rgba(203, 67, 56)",
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)", 
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(54, 162, 235, 0.2)",
-    "rgba(203, 67, 56)" 
-]
+var years = [2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050];
+var barColors = Array(years.length).fill("rgba(54, 162, 235, 0.2)");
+barColors[8] = "rgba(203, 67, 56)";
+barColors[24] = "rgba(203, 67, 56)";
+
 
 // Form asking Commitment year
 var Cyear;
@@ -101,16 +73,6 @@ var yearlist = years.slice(CYIndexLoc(Cyear));
   }
 
 
-// Strategy Buttons
-const strategyButtons = document.querySelectorAll(".strategy-button");
-
-  strategyButtons.forEach(button => {
-    button.addEventListener("click", function() {
-      console.log(`${button.textContent} was clicked!`);
-    });
-  });
-
-
 // Drawing Chart.js v2.9.3 - Bar chart
 var ctx = document.getElementById("myChart");
 var chart = new Chart(ctx, {
@@ -122,7 +84,7 @@ var chart = new Chart(ctx, {
         type: "bar",
         label: "Expected Progress",
         data: listBars,
-        backgroundColor: barcolors.slice(CYIndexLoc(Cyear)),
+        backgroundColor: barColors.slice(CYIndexLoc(Cyear)),
         borderColor: "rgba(54, 162, 235, 1)",        
         borderWidth: 1,        
         
@@ -139,3 +101,12 @@ var chart = new Chart(ctx, {
   }
 });
 
+
+// Strategy Buttons
+const strategyButtons = document.querySelectorAll(".strategy-button");
+
+  strategyButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      console.log(`${button.textContent} was clicked!`);
+    });
+  });

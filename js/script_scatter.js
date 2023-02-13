@@ -1,5 +1,5 @@
 
-// Cursor dinámico
+// Dynamic Cursor
 let menu = document.querySelector("#menu-bars");
 let header = document.querySelector("header");
 
@@ -111,9 +111,6 @@ function redraw() {
     drawPoint(points[i].x, points[i].y, points[i].goaltext);
   }
 }
-
-
-
 
     // Displaying the coordinates of the point when clicking on it
     canvas.onmousedown = function (e) {
