@@ -111,6 +111,68 @@
     </header>
     <!-- Header section ends -->
 
+    <!--Text section and instructions for canvas (drawing dots)-->
+    <section class="home" id="about">
+      <div class="content">
+        
+        <h3><span> PLANNING</span>2050 </h3>
+        <p class="info">
+          Dashboard | Mapping your Strategy
+        </p>
+    </section>
+
+    <div class="scatterParag">
+      <p>Please click on the canvas where you think your strategy or action in your 2050Commitment is located today</p>
+      <p>There is no right or wrong answer here. Your picked location should be based on your current interpretation of how much IMPACT ("X" axis), and how COMMON ("Y" axis) is your solution / action / strategy today. </p>
+      <p>When mapping this, think about your city or community, compared to what you consider peer cities / communities</p>
+    </div>
+    
+    <section class="about" id="about"> 
+      <section class="tool" id="saveX">
+        <div class="box-container">
+  
+        <!-- Plotting the Canvas for the Scatterplot  -->
+        <div class="content">
+          <canvas class="scatter" id="scatter" width="500" height="500"></canvas>
+        </div> 
+  
+        <div class="box-container">
+          <div class="box">
+            <i class="fas fa-list-ol"></i>
+            <h3 >Click on the "canvas" |  Count:</h3>
+            <h3 id="st1">0</h3>
+            <p>Click "Save" to store your inputs</p>
+            <a onclick="downloadCSV()" href="#" class="btn" id="toDatabase">Save</a>
+            <p>After saving, Click "Manage" </p>
+            <p>to add details and edit your inputs</p>
+  
+            <div><a href="../pages/userprofile.html" class="btn">Manage</a></div>
+            <p>Ready to report progress? </p>
+            <p>Click below for next steps</p>
+            <div><a href="#toolx" class="btn">More</a></div>
+          </div>            
+        </div>
+      </section>
+    </section>
+  
+    <!-- Manage My Strategies Section  -->
+    <section class="tool" id="toolx">
+      <h1 class="heading"><span> Manage Strategies </span> |  Report Progress</h1>
+          <div class="box-container">
+            <div class="box">
+              <i class="fas fa-bullseye"></i>
+              <p>Almost Ready, I want to edit my inputs </p>
+              <a href="../pages/userprofile.html" class="btn">MANAGE ALL MY STRATEGIES</a>
+            </div>
+
+          <div class="box">
+            <i class="fas fa-signal"></i>
+            <p>I am ready to repor progress </p>
+            <a href="../pages/barchart.html" class="btn">ACCESS MY REPORTING DASHBOARD</a>
+          </div>
+        </div>
+    </section>   
+
     <!-- Footer section starts -->
     <footer class="footer">
       Created by <span> PLANNING2050 web development team </span> | All rights
