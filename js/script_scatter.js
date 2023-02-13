@@ -169,7 +169,7 @@ function downloadCSV(csv) {
   }
 }
 
-// Function to convert array of objects to CSV
+// Function to convert array of objects to CSV file
 function convertArrayOfObjectsToCSV(data, existingData) {
   var result, ctr, keys, columnDelimiter, lineDelimiter, data;
 
