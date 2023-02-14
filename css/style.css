@@ -699,13 +699,11 @@ section {
 
 #year-selector {
   background-color: #2E9CCA;
-  font-weight: bold;
   color: #fff;
 }
 
 label {
   color: #fff;
-  font-weight: bold;
   margin-right: 10px;
   font-size: 18px;
 }
@@ -734,13 +732,11 @@ select {
   border-radius: 5px;
   height: 30px;
   font-size: 18px;
-  font-weight: bold;
   padding: 0 10px;
   background-color: #2E9CCA;
   color: #fff;
   cursor: pointer;
 }
-
 /* Text box and dropdown menu for Barchart ends */
 
 
