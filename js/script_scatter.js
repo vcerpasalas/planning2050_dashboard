@@ -112,7 +112,7 @@ function redraw() {
   }
 }
 
-// Displaying the coordinates of the point when clicking on it
+// Display the coordinates of the point when clicking on it
 canvas.onmousedown = function (e) {
   var x = e.pageX - canvas.offsetLeft - canvas.width / 2;
   var y = canvas.height / 2 - (e.pageY - canvas.offsetTop);

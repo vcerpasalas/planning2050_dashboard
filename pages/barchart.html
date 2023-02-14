@@ -43,11 +43,11 @@
         <a href="#" class="fab fa-linkedin"></a>
       </div>
     </header>
-
     <!-- Header section ends -->
 
     <!-- Chart.js v2.9.3 - Bar chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
 
     <body class="body">
       <!-- Added buttons for strategy -->
@@ -57,9 +57,28 @@
         <button class="strategy-button">Strategy 3</button>
       </div>
 
+      <!-- Bar Chart starts -->
       <canvas id="myChart" width="200" height="100"></canvas>
-    </body>
-    <!-- Bar Chart ends -->
+    
+      <!-- Link between the Text box and the yellow line starts -->
+      <div id="input-section">
+        <label for="year-selector">Select Year:</label>
+        <select id="year-selector">
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+        </select>      
+
+        <input type="number" id="value-input" min="1" max="100" />
+        <button id="save-button">Save</button>
+      </div>
+      <!-- Bar Chart ends -->
 
     <!-- Footer section starts -->
     <footer class="footer">

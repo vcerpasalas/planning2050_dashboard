@@ -83,7 +83,7 @@ strategyButtons.forEach((button) =>
   )
 );
 
-// Drawing Chart.js v2.9.3 - Bar chart
+// Draw Chart.js v2.9.3 - Bar chart
 var ctx = document.getElementById("myChart");
 var chart = new Chart(ctx, {
   type: "bar",
@@ -107,4 +107,47 @@ var chart = new Chart(ctx, {
       },
     ],
   },
+});
+
+// Link between the Text box and the yellow line
+
+// Get input elements
+const yearSelector = document.getElementById("year-selector");
+const valueInput = document.getElementById("value-input");
+const saveButton = document.getElementById("save-button");
+
+// Initialize data for Progress Reported line
+const progressData = [0.0, 13, 30, 35, 25, 40];
+
+// Event listener for save button
+saveButton.addEventListener("click", () => {
+  // Get selected year and value from input
+  const year = yearSelector.value;
+  const value = valueInput.value;
+
+  // Find index of selected year
+  const yearIndex = years.indexOf(parseInt(year));
+
+  // Update chart data
+  chart.data.datasets[1].data[yearIndex] = value;
+  chart.update();
+
+  // Update Progress Reported line data
+  progressData[yearIndex] = value;
+  chart.data.datasets[1].data = progressData;
+  chart.update();
+});
+
+// Event listener for year selector
+yearSelector.addEventListener("change", () => {
+  // Get selected year
+  const year = yearSelector.value;
+
+  // Find index of selected year
+  const yearIndex = years.indexOf(parseInt(year));
+
+  // Update Progress Reported line data
+  progressData[yearIndex] = valueInput.value;
+  chart.data.datasets[1].data = progressData;
+  chart.update();
 });
