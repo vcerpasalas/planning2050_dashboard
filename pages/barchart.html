@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLANNING2050 Dashboard</title>
+
+    <!-- Font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- Custom CSS file link  -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body class="body">
+    <!-- Cursors  -->
+    <div class="cursor-1"></div>
+    <div class="cursor-2"></div>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+    <!-- Header section starts  -->
+    <header class="header">
+      <a href="../index.html#" class="logo"> <span>PLANNING</span> 2050 </a>
+
+      <nav class="navbar">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About us</a>
+        <a href="../index.html#tool">Our tool</a>
+        <a href="../index.html#CNC">Cities & Communities</a>
+        <a href="../index.html#network">Network</a>
+        <a href="../index.html#contact">Contact us</a>
+      </nav>
+
+      <div class="follow">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+      </div>
+    </header>
+    <!-- Header section ends -->
+
+    <section class="home" id="about">
+      <div class="content">
+        
+        <h3><span> PLANNING</span>2050 </h3>
+        <p class="info">
+          Dashboard | Reporting Progress
+        </p>
+    
+<!-- BARCHART Header section with pulled information from database-->
+<section class="Chart" id="Chart">
+  <div class="box-container">
+    <div class="box">
+      <div class="content">
+        <h3 id="stname_replace">S1 Title or Name goes here</h3>
+        <span> Commitment Year: <span id="Cyear"> 2022 </span> </span>
+        
+        <p id="stdesc_replace">
+          Description of the strategy goes here (pulled from database)... 
+          Lorem ipsum ....Early adopters include: City of Las Vegas, 
+          Mid-Ohio Regional Planning Commission, State of Hawaii, RCE North Texas, 
+          and more...
+        </p>
+      </div>
+      <!-- Plot bar chart -->
+      <body class="body">
+        <canvas id="myChart" width="200" height="100"></canvas>
+        <div id="input-section">
+          <select id="yearSelector"></select>
+          <input type="number" id="value-input" value="0.00" min="0">
+          <button id="save-button">Save</button>
+      </body>
+      <!-- Bar Chart ends -->
+    </div>
+
+</section>
+
+
+    <!-- Chart.js v2.9.3 - Bar chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+
+
+
+    <!-- Footer section starts -->
+    <footer class="footer">
+      Created by <span> PLANNING2050 web development team </span> | All rights
+      reserved
+    </footer>
+    <!-- Footer section ends -->
+
+    <!-- Custom js file link  -->
+    <script src="../js/script_barchart.js"></script>
+    <script>document.getElementById("Cyear").innerHTML = commitmentYear.Cyear;</script>
+    
+  </body>
+</html>
