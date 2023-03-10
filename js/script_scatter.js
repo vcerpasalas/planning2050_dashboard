@@ -135,7 +135,7 @@ function redraw() {
 
 redraw();
 
-/// Function to download the CSV file
+// Function to download the CSV file
 function downloadCSV(csv) {
   var dataGoaltext = [];
   for (var i = 0; i < points.length; i++) {

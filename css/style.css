@@ -704,6 +704,25 @@ section {
   padding: 0.5rem 0;
   margin-left: 8rem;
 }
+
+.swal2-popup {
+  width: 500px !important;
+  height: auto !important;
+  padding: 20px !important;
+}
+
+.swal2-content {
+  font-size: 15px !important;
+} 
+
+.swal-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.swal-button {
+  font-size: 16px;
+}
 /* Scatter section ends */
 
 /* Text box and dropdown menu for Barchart starts */
@@ -744,7 +763,7 @@ select {
   color: #333;
 }
 
-#save-button {
+#report-button {
   border: none;
   border-radius: 5px;
   height: 30px;
@@ -753,6 +772,11 @@ select {
   background-color: #2E9CCA;
   color: #fff;
   cursor: pointer;
+  transition: transform 0.4s ease-in-out;
+}
+
+#report-button:hover {
+  transform: scale(1.0);
 }
 /* Text box and dropdown menu for Barchart ends */
 
