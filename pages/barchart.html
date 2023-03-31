@@ -53,33 +53,33 @@
           Dashboard | Reporting Progress
         </p>
     
-<!-- BARCHART Header section with pulled information from database-->
-<section class="Chart" id="Chart">
-  <div class="box-container">
-    <div class="box">
-      <div class="content">
-        <h3 id="stname_replace">S1 Title or Name goes here</h3>
-        <span> Commitment Year: <span id="Cyear"> 2022 </span> </span>
-        
-        <p id="stdesc_replace">
-          Description of the strategy goes here (pulled from database)... 
-          Lorem ipsum ....Early adopters include: City of Las Vegas, 
-          Mid-Ohio Regional Planning Commission, State of Hawaii, RCE North Texas, 
-          and more...
-        </p>
-      </div>
-      <!-- Plot bar chart -->
-      <body class="body">
-        <canvas id="myChart" width="200" height="100"></canvas>
-        <div id="input-section">
-          <select id="yearSelector"></select>
-          <input type="number" id="value-input" value="0.00" min="0">
-          <button id="report-button">Report</button>
-      </body>
-      <!-- Bar Chart ends -->
-    </div>
+    <!-- BARCHART Header section with pulled information from database-->
+    <section class="Chart" id="Chart">
+      <div class="box-container">
+        <div class="box">
+          <div class="content">
+            <h3 id="stname_replace">S1 Title or Name goes here</h3>
+            <span> Commitment Year: <span id="Cyear"> 2022 </span> </span>
+            
+            <p id="stdesc_replace">
+              Description of the strategy goes here (pulled from database)... 
+              Lorem ipsum ....Early adopters include: City of Las Vegas, 
+              Mid-Ohio Regional Planning Commission, State of Hawaii, RCE North Texas, 
+              and more...
+            </p>
+          </div>
+          <!-- Plot bar chart -->
+          <body class="body">
+            <canvas id="myChart" width="200" height="100"></canvas>
+            <div id="input-section">
+              <select id="yearSelector"></select>
+              <input type="number" id="value-input" value="0.00" min="0">
+              <button id="report-button">Report</button>
+          </body>
+          <!-- Bar Chart ends -->
+        </div>
 
-</section>
+    </section>
 
     <!-- Chart.js v2.9.3 - Bar chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
